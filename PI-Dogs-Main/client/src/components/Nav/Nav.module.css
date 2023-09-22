@@ -1,0 +1,20 @@
+.Nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .Nav h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .Nav a {
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+    font-weight: bold;
+  }

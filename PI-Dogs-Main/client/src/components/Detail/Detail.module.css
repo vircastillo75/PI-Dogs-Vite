@@ -1,0 +1,65 @@
+/* Estilo para el contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Estilo para la imagen */
+  .image {
+    max-width: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
+  }
+  
+  /* Estilo para el nombre */
+  .name {
+    font-size: 2em;
+    margin: 10px 0;
+  }
+  
+  /* Estilo para la vida útil */
+  .lifeSpan {
+    font-size: 1.5em;
+    margin: 5px 0;
+  }
+  
+  /* Estilo para el temperamento */
+  .temperament {
+    font-size: 1.5em;
+    margin: 5px 0;
+  }
+  
+  /* Estilo para la altura */
+  .height {
+    font-size: 1.5em;
+    margin: 5px 0;
+  }
+  
+  /* Estilo para el peso */
+  .weight {
+    font-size: 1.5em;
+    margin: 5px 0;
+  }
+  
+  /* Estilo para el botón */
+  .button {
+    background-color: #007BFF;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+
+

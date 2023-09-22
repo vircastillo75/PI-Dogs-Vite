@@ -1,0 +1,81 @@
+/* Estilos para el contenedor principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  /* Estilos para el contenedor secundario */
+  .container2 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Estilos para el título */
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Estilos para el formulario */
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Estilos para los campos de entrada */
+  .inputContainer {
+    margin-bottom: 20px;
+  }
+  
+  .inputText,
+  .inputNumber {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Estilos para los mensajes de error */
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  /* Estilos para los botones */
+  .btnContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .btnSubmit {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Estilos para los checkboxes y etiquetas */
+  .containerCheckBox {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    font-size: 16px;
+  }
+  
+  .checkBox {
+    margin-right: 10px;
+  }

@@ -1,0 +1,68 @@
+
+
+/* Estilos para el body */
+body {
+    background-image: url("https://tse2.mm.bing.net/th?id=OIP.kKBf8FoNYCG-9E7hco2DEAHaEo&pid=Api&P=0&h=180");
+     background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Estilos para el contenedor principal */
+  .LandingPage {
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Estilos para el contenedor interno */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 60px;
+    text-align: center;
+  }
+  
+  /* Estilos para el título h1 */
+  .container h1 {
+    padding: 10px;
+    margin-bottom: 100px; /* Espacio entre h1 y h3 */
+    color: #000000;
+    font-size: 500%;
+    text-shadow: 0 0 10px #fcbf49;
+  }
+  
+  /* Estilos para el subtítulo h3 */
+  .container h3 {
+    margin-bottom: 70px; /* Espacio entre h3 y el botón */
+    color: #2a9d8f;
+    text-shadow: 0 0 12px black;
+  }
+  
+  /* Estilos para el botón */
+  .container button {
+    box-shadow: 0 14px 18px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 12px;
+    width: 150px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background: #ee9b00;
+    color: #110808;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Estilos para el botón al pasar el mouse sobre él */
+  .container button:hover {
+    background: #ab5703;
+    transition: 0.1s;
+  }
+  
