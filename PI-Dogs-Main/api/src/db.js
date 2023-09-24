@@ -38,7 +38,7 @@ Dog.belongsToMany (Temperaments, {through: "DogTemperaments"});
 Temperaments.belongsToMany (Dog, {through: "DogTemperaments"});
 
 module.exports = {
-  ...sequelize.models, 
+  ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
   Dog,
   Temperaments,
   conn: sequelize,     // para importart la conexión { conn } = require('./db.js');

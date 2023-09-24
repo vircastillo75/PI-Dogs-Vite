@@ -1,0 +1,30 @@
+const STATUS_OK = 200;
+const STATUS_ERROR = 404;
+const {API_KEY, ENDPOINT}= process.env;
+const axios = require("axios");
+const { Temperaments } = require("../db");
+
+
+const getTemperaments = async function(req, res) {
+    try {
+        const { data } = await axios.get(`${ENDPOINT}?api_key=${API_KEY}`);
+        const temperamentsArray = data.map(breed => breed.temperament);
+        const uniqueTemperaments = temperamentsArray
+          .join(',')
+          .split(',')
+          .map(temp => temp.trim())
+          .filter((temp, index, array) => temp && array.indexOf(temp) === index);
+    
+        for (const temp of uniqueTemperaments) {
+          await Temperaments.findOrCreate({ where: { name: temp } });
+        }
+    
+        res.status(STATUS_OK).json(uniqueTemperaments);
+      } catch (error) {
+        res.status(STATUS_ERROR).json({ error: error.message });
+      }
+    };
+
+module.exports = {
+    getTemperaments
+}

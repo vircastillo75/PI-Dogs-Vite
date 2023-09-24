@@ -1,7 +1,7 @@
-const { Router } = require('express');
+const { Router } = require("express");
 const router = Router();
-const getTemperaments = require('../controllers/GetTemperaments');
+const { getTemperaments} = require("../controllers/temperaments")
 
-router.get('/temperament',getTemperaments);
+router.get('/temperaments' , getTemperaments)
 
-module.exports = router;
+module.exports = router
