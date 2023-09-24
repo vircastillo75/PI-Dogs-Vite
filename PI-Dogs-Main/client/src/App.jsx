@@ -1,54 +1,30 @@
 import './App.css';
-import { Routes , Route, useLocation} from 'react-router-dom';
-import Landing from './components/LandingPage/LandingPage';
-import About from "./components/About/About"
-import Cards from "./components/Cards/Cards";
-import Nav from "./components/Nav/Nav"
-import Detail from "./components/Detail/Detail"
-import Create from "./components/Create/Create"
-import Error404 from './components/Error404/Error404'
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { addDogs, allTemperaments } from './redux/actions'
+import { Routes, Route, useLocation } from "react-router-dom";
+import LandingPage from './components/LandingPage/LandingPage';
+import Nav from './components/Nav/Nav';
+import HomePage from "./components/HomePage/HomePage";
+import DetailPage from "./components/Detail/Detail";
+import FormPage from "./components/Form/FormPage";
+import About from './components/About/About';
 
 function App() {
-
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(addDogs())
-  },[]);
-
-  useEffect(() => {
-    dispatch(allTemperaments());
-  }, [dispatch]);
-  
-  const location = useLocation()
+  const location = useLocation();
 
   return (
-    <div>
-
-      {location.pathname !== "/" && <Nav/>}
-
-    <Routes>
-
-      <Route path='/' element={<Landing/>}></Route>
-
-      <Route path='/home' element={<Cards/>}></Route>
-
-      <Route path='/detail/:id' element={<Detail/>}></Route>
-
-      <Route path='/about' element={<About/>}></Route>
-
-      <Route path='/create' element={<Create/>}></Route>
-
-      <Route path='*' element={<Error404/>}></Route>
-
-    </Routes>
-
- 
+    <div className="App">
+      {/*Renderizado Condicional de Nav*/}
+      {location.pathname!=="/" && 
+      <Nav />}
+    
+      <Routes>
+        <Route path='/' element={<LandingPage/>}/>
+        <Route path='/home' element={<HomePage/>}/>
+        <Route path='/detail/:id' element={<DetailPage/>}/>
+        <Route path='/form' element={<FormPage/>}/>
+        <Route path='/about' element={<About/>}/>
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

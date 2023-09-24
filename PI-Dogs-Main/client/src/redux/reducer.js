@@ -1,132 +1,193 @@
 import {
-  ADD_DOGS,
-  NEXT,
-  PREV,
-  ON_SEARCH_ID,
-  ON_SEARCH_NAME,
-  ALL_TEMPERAMENTS,
-  FILTER_TEMPERAMENTS,
-  FILTER_AOZ,
-  RESET,
-  FILTER_WEIGHT,
-  CREATE_DOG,
-  FILTER_ORIGINS,
-} from "./actionsTypes";
+   GET_ALL_TEMPERAMENTS,
+    GET_ALL_BREEDS, 
+    REMOVE_BREED, 
+    FILTER_BY_TEMPERAMENTS, 
+    FILTER_BY_ORIGIN, 
+    ORDER_BY_WEIGHT, 
+    ALPHABETICAL_ORDER, 
+    SEARCH_BY_NAME} from "./action-types"
 
 const initialState = {
-  dogs: [],
-  pageNumber: 1,
-  onSearchById: [],
-  temperaments: [],
-  dogsFilter : [],
-  dogsDb : [],
-  dogsApi : []
+    allTemperaments: [],
+    allBreeds: [],
+    temperaments: [],
+    breeds: [],
+    temperament: {},
+    breed: {}
 };
 
 const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case ADD_DOGS:
-      if (Array.isArray(action.payload)) {
-        return {
-          ...state,
-          dogs: [...action.payload],
-          dogsFilter: [...action.payload],
-          dogsApi: [...action.payload]
-        };
-      }
+    switch (action.type) {
+        case GET_ALL_TEMPERAMENTS:
+            return{
+                ...state,
+                allTemperaments:action.payload,
+                temperaments: action.payload
+            }
 
-    case ON_SEARCH_ID:
-      return {
-        ...state,
-        onSearchById: action.payload,
-      };
+        case GET_ALL_BREEDS:
+            return{
+                ...state,
+                allBreeds:action.payload,
+                breeds: action.payload
+            }
 
-    case ON_SEARCH_NAME:
-      return {
-        ...state,
-        dogs: action.payload,
-        pageNumber: 1,
-      };
-    
-    case CREATE_DOG:
-      return{
-        ...state,
-        dogs: [action.payload, ...state.dogs],
-        dogsFilter:  [action.payload, ...state.dogsFilter],
-        dogsDb : [action.payload, ...state.dogsDb]
-      }
-    case ALL_TEMPERAMENTS:
-      return {
-        ...state,
-        temperaments: action.payload,
-      };
+        case SEARCH_BY_NAME:
+            try {
+                if (action.payload==="") {
+                    throw Error("Necesita escribir un nombre");
+                }
+                const breedsFiltered = state.allBreeds.filter((dog) => {
+                    let nameArray = action.payload.toLowerCase().split(" ");
+                    let breedArray = dog.name.toLowerCase().split(" ");
+                    let verificacion = 0;
+                    if(breedArray.length>=nameArray.length){
+                        for(let i=0; i<nameArray.length; i++){
+                            if(breedArray.indexOf(nameArray[i]) !== -1){
+                                verificacion+=1
+                            }
+                        }
+                    }else{
+                        return false;
+                    }
+                    
+                    if(nameArray.length===verificacion){
+                        return dog
+                    }else{
+                        return false
+                    }
+                })
+                if (breedsFiltered.length===0) {
+                    throw Error("No se encontro ninguna raza con ese nombre");
+                } else {
+                    return{
+                        ...state,
+                        breeds: breedsFiltered
+                    }
+                }
+            } catch (error) {
+                alert(error.message)
+            }
 
-    case FILTER_ORIGINS:
-      let updatedDogs = [];
-      if (action.payload === "API") {
-        updatedDogs = [...state.dogsApi];
-      } else if (action.payload === "DB") {
-        updatedDogs = [...state.dogsDb];
-      } else {
-        updatedDogs = [...state.dogsFilter, ...state.dogsDb];
-      }
-      return {
-        ...state,
-        dogs: updatedDogs,
-        pageNumber: 1
-      };    
+        case REMOVE_BREED:
+            return{
+                ...state,
+                breeds: state.breeds.filter(dog=>dog.id!==action.payload)
+            }
 
-      case FILTER_TEMPERAMENTS: 
-      return {
-        ...state,
-        dogs: action.payload === "Alldogs" 
-        ? [...state.dogsFilter]
-        : state.dogsFilter.filter((dog) => dog.temperament && dog.temperament.includes(action.payload)),
-        pageNumber: 1,
-      };
+        case FILTER_BY_TEMPERAMENTS:
+            try {
+                if (action.payload==="") {
+                    throw Error("opcion invalida");
+                } else {
+                    const breedsFiltered= state.breeds.filter(dog=>dog.Temperaments.indexOf(action.payload) !== -1)
+                    console.log(breedsFiltered);
+                    return{
+                        ...state,
+                        breeds: breedsFiltered
+                    }
+                }
+            } catch (error) {
+                return{...state}
+            }
 
-    case FILTER_AOZ:
-      const filterAoZ = [...state.dogs];
-      return {
-        ...state,
-        dogs:
-          action.payload === "A"
-            ? filterAoZ.sort((a, b) => a.name.localeCompare(b.name))
-            : filterAoZ.sort((a, b) => b.name.localeCompare(a.name)),
-            pageNumber: 1,
-      };
+        case FILTER_BY_ORIGIN:
+            try {
+                if (action.payload==="") {
+                    throw Error("opcion invalida")
+                } else {
+                    return{
+                        ...state,
+                        breeds: (action.payload.slice(0,1) === "a" 
+                                ?(action.payload.slice(1) === "ll"
+                                    ?state.allBreeds
+                                    :state.allBreeds.filter(dog=>typeof(dog.id)==="number"))
+                                :state.allBreeds.filter(dog=>isNaN(dog.id))
+                                )
+                    }
+                }
+            } catch (error) {
+                return{...state}
+            }
 
-      case FILTER_WEIGHT:
-        const filterWeight = [...state.dogs];
-        return {
-          ...state,
-          dogs: action.payload === "maximum"
-            ? filterWeight.sort((a, b) => Number(b.weight.split(" - ")[1]) - Number(a.weight.split(" - ")[1]))
-            : filterWeight.sort((a, b) => Number(a.weight.split(" - ")[1]) - Number(b.weight.split(" - ")[1])),
-            pageNumber: 1,
-        };
+        case ORDER_BY_WEIGHT:
+            try {
+                if (action.payload==="") {
+                    throw Error("opcion no valida")
+                } else {
+                    return{
+                        ...state,
+                        breeds: 
+                        (action.payload.slice(0,-1) === "PMIN"
+                        ? (action.payload.slice(-1)==="A"
+                            ? state.breeds.sort((a,b)=>{
+                                const breedMinWeightA = Number(a.minWeight);
+                                const breedMinWeightB = Number(b.minWeight);
+                                return breedMinWeightA-breedMinWeightB
+                            })
+                            :state.breeds.sort((a,b)=>{
+                                const breedMinWeightA = Number(a.minWeight);
+                                const breedMinWeightB = Number(b.minWeight);
+                                return breedMinWeightB-breedMinWeightA
+                            }))
+                        : (action.payload.slice(-1)==="A"
+                            ? state.breeds.sort((a,b)=>{
+                                const breedMaxWeightA = Number(a.maxWeight);
+                                const breedMaxWeightB = Number(b.maxWeight);
+                                return breedMaxWeightA-breedMaxWeightB
+                            })
+                            :state.breeds.sort((a,b)=>{
+                                const breedMaxWeightA = Number(a.maxWeight);
+                                const breedMaxWeightB = Number(b.maxWeight);
+                                return breedMaxWeightB-breedMaxWeightA
+                            }))
+                        )
+                    }
+                }
+            } catch (error) {
+                return{...state}
+            }
 
-      case RESET:
-        return {
-          ...state,
-          dogs: [...state.dogsFilter]
-        };
-
-    case NEXT:
-      return {
-        ...state,
-        pageNumber: state.pageNumber + 1,
-      };
-
-    case PREV:
-      return {
-        ...state,
-        pageNumber: state.pageNumber - 1,
-      };
-
-    default:
-      return state;
-  }
-};
+        case ALPHABETICAL_ORDER:
+            try {
+                if (action.payload==="") {
+                    throw Error("No es una opcion valida")
+                } else {
+                    return{
+                        ...state,
+                        breeds: 
+                            action.payload === "AA"
+                            ?state.breeds.sort((a,b)=>{
+                                const breedNameA = a.name.toLowerCase();
+                                const breedNameB = b.name.toLowerCase();
+                                if(breedNameA < breedNameB){
+                                    return -1;
+                                }
+                                if (breedNameA > breedNameB) {
+                                    return 1;
+                                }
+                                return 0;
+                            })
+                            :state.breeds.sort((a,b)=>{
+                                const breedNameA = a.name.toLowerCase();
+                                const breedNameB = b.name.toLowerCase();
+                                if(breedNameB < breedNameA){
+                                    return -1;
+                                }
+                                if (breedNameB > breedNameA) {
+                                    return 1;
+                                }
+                                return 0;
+                            })
+                    }
+                }
+            } catch (error) {
+                return{...state}
+            }
+        default:
+            return{...state}
+    }
+}
 
 export default reducer;

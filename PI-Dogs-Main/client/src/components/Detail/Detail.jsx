@@ -4,7 +4,7 @@ import styles from './Detail.module.css';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
-const DetailPage = () => {
+const Detail = () => {
   const { id } = useParams();
   const [breed, setBreed] = useState({});
 
@@ -85,4 +85,4 @@ const DetailPage = () => {
   );
 };
 
-export default DetailPage;
+export default Detail;

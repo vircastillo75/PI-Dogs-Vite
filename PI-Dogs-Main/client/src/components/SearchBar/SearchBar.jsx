@@ -1,32 +1,23 @@
-import React from 'react'
-import { useState } from 'react'
-import "./SearchBar.module.css"
-import { useDispatch } from 'react-redux'
-import { onSearchName } from "../../redux/actions"
+import styles from "./SearchBar.module.css";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { searchByName } from "../../redux/actions";
 
-export default function SearchBar() {
+const SearchBar = () => {
 
-  const [name, setName] = useState("")
-  
-  const dispatch = useDispatch()
+    const dispatch = useDispatch()
+    const [name,setName] = useState("");
 
-  const handleChange = (event)=>{
-    setName(event.target.value)
-  }
-
-  const search = () =>{
-    dispatch(onSearchName(name))
-    setName("");
-  }
- 
-  return (
-    <div className='Custom_Container__Search'>
-
-        <input className='Custom_Input__Search' value={name} onChange={handleChange} type="search" placeholder='Enter your name' />
-
-      <button className="Custom_button__search" onClick={search}><p>Search</p>
-      </button>
-
-    </div>
-  )
+    const handleChange = (event) => {
+        setName(event.target.value)
+    }
+    return (
+        <div className={styles.container}>
+            <input className={styles.input} type='search' placeholder='Nombre de la raza' onChange={handleChange} value={name}/>
+            <button className={styles.buttonSearch} onClick={()=>dispatch(searchByName(name))}>
+                <span className={styles.texto}>SEARCH</span> </button>
+        </div>
+    )
 }
+
+export default SearchBar;

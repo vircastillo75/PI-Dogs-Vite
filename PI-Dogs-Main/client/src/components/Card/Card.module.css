@@ -1,62 +1,153 @@
-.Custom_Card_Container {
-    width: 300px; /* Ancho fijo */
-    height: 400px; /* Alto fijo */
-    border: 1px solid #ccc;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .Custom_Card_Face {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s;
-  }
-  
-  .Custom_Card_Face.front {
-    transform: rotateY(0deg);
-    background-color: #f0f0f0;
-  }
-  
-  .Custom_Card_Face.back {
-    transform: rotateY(180deg);
-  }
-  
-  .Custom_Card_Image {
-    width: 100%; /* Ancho fijo al 100% del contenedor */
-    max-height: 200px; /* Altura máxima fija */
-    margin-bottom: 10px;
-  }
-  
-  .Custom_Card_Name {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .Custom_Card_Temperament {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  
-  .Custom_Card_Link_Details {
-    text-decoration: none;
-    background-color: #007bff;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    transition: background-color 0.3s;
-  }
-  
-  .Custom_Card_Link_Details:hover {
-    background-color: #0056b3;
-  }
-  
+.container{
+  width: 400px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  padding: 5px;
+  border: 4px solid transparent;
+  justify-content: center;
+  margin: 1em;
+}
+.btnContainer{
+  display: flex;
+  justify-content: end;
+  margin: 0.5em 0;
+}
+.btnClose {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: red;
+}
+/* plus sign */
+.sign {
+  width: 100%;
+  font-size: 1.5em;
+  color: white;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* text */
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 500;
+  transition-duration: .3s;
+}
+/* hover effect on button width */
+.btnClose:hover {
+  width: 125px;
+  border-radius: 0px;
+  transition-duration: .3s;
+}
+.btnClose:hover .sign {
+  width: 30%;
+  transition-duration: .3s;
+  padding-left: 5px;
+}
+/* hover effect button's text */
+.btnClose:hover .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  padding-right: 20px;
+}
+/* button click effect*/
+.btnClose:active {
+  transform: translate(2px ,2px);
+}
+.nameTitle{
+  display: inline;
+  position: relative;
+  margin: 0.3em 0;
+}
+.imageContainer{
+  width: 100%;
+  height: 250px;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+.ContainerWeightAndBtnDetail{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1em 0;
+}
+.weightContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.weightTitle{
+  display: inline;
+  position: relative;
+  margin: 0.3em 0;
+}
+.weightData{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.data{
+  margin: 0 1em;
+}
+.containerBtnDetail{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btnDetail{
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 9px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.btnDetail:hover{
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  background-color: #a6c2f0;
+  cursor: pointer;
+}
+
+.temperamentsContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+.temperament{
+  background-color: #b2b2fd;
+  color: #1a41cd;
+  padding: 1px 3px;
+  margin: 0.3em;
+  border-radius: 10px;
+}
