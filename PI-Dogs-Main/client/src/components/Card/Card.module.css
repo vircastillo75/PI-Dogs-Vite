@@ -1,44 +1,62 @@
-.card {
-    width: 280px;
-    height: 460px;
-    border-radius: 8px;
-    box-shadow: 2, 4px 4x rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    margin: 2%;
+.Custom_Card_Container {
+    width: 300px; /* Ancho fijo */
+    height: 400px; /* Alto fijo */
+    border: 1px solid #ccc;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .Custom_Card_Face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 20px;
     text-align: center;
-    transition: all 0.20s;
-    background: #c2a23076;
-}
-
-.card:hover{
-    transform: translateY(-10px);
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
-}
-
-.img {
-    padding-top: 5%;
-    width: 250px;
-    height: 220px;
-}
-
-.name {
-    color: #2623dd;
-    font-weight: 660;
-}
-
-.weight{
-    font-weight: 500;
-}
-
-.weightProps {
-    padding: 0 1rem;
-    font-size: 16px;
-    font-weight: 250;
-}
-
-.enlace {
-    font-size: 15px;
-    font-weight: 250;
-    color: #1422a1;
-    text-decoration-thickness: 4;
-}
+    transition: transform 0.3s;
+  }
+  
+  .Custom_Card_Face.front {
+    transform: rotateY(0deg);
+    background-color: #f0f0f0;
+  }
+  
+  .Custom_Card_Face.back {
+    transform: rotateY(180deg);
+  }
+  
+  .Custom_Card_Image {
+    width: 100%; /* Ancho fijo al 100% del contenedor */
+    max-height: 200px; /* Altura máxima fija */
+    margin-bottom: 10px;
+  }
+  
+  .Custom_Card_Name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .Custom_Card_Temperament {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .Custom_Card_Link_Details {
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .Custom_Card_Link_Details:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,113 +1,138 @@
 import {
-    GET_DOGS,
-    GET_DOGS_DB,
-    GET_DOGS_API,
-    GET_NAME,
-    GET_ID,
-    GET_TEMPERAMENTS,
-    CREATE_DOG
-} from './type';
+  ADD_DOGS,
+  NEXT,
+  PREV,
+  ON_SEARCH_ID,
+  ON_SEARCH_NAME,
+  ALL_TEMPERAMENTS,
+  FILTER_TEMPERAMENTS,
+  FILTER_ORIGINS,
+  FILTER_AOZ,
+  RESET,
+  FILTER_WEIGHT,
+  CREATE_DOG,
+} from "./actionsTypes";
+const URL = "http://localhost:3001/dogs";
+const URL_SEARCH = "http://localhost:3001/search?";
+const URL_TEMPERAMENTS = "http://localhost:3001/temperaments";
+const URL_CREATE = "http://localhost:3001/create";
+import axios from "axios";
 
-import axios from 'axios';
-
-const URL = "http://localhost:3001";
-
-export const getDogs = () => {
-    return async (dispatch) => {
-        try {
-
-            const { data } = await axios.get(`${URL}/dogs`);
-           
-            return dispatch({
-                type: GET_DOGS,
-                payload: data,
-            });
-        } catch (error) {
-            alert(error);
-        }
+export const addDogs = () => {
+  return async function (dispatch) {
+    try {
+      const { data } = await axios.get(`${URL}`);
+      dispatch({
+        type: ADD_DOGS,
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: ADD_DOGS_ERROR,
+        payload: error.message, 
+      });
     }
-}
+  };
+};
 
-export const getDogsAPI = () => {
-    return async (dispatch) => {
-        try {
-            const { data } = await axios.get(`${URL}/api`)
-            return dispatch({
-                type: GET_DOGS_API,
-                payload: data
-            })
-        } catch (error) {
-            alert(error.message)
-        }
+export const onSearchId = (id) => {
+  return async function (dispatch) {
+    try {
+      const { data } = await axios.get(`${URL}/${id}`);
+      dispatch({
+        type: ON_SEARCH_ID,
+        payload: data,
+      });
+    } catch (error) {
+      alert(`Lo sentimos pero no tenemos ese perro`);
     }
-}
+  };
+};
 
-export const getDogsDB = () => {
-    return async (dispatch) => {
-        try {
-            const { data } = await axios.get(`${URL}/db`)
-            return dispatch({
-                type: GET_DOGS_DB,
-                payload: data
-            })
-        } catch (error) {
-            alert(error.message)
-        }
+export const onSearchName = (name) => {
+  return async function (dispatch) {
+    try {
+      const { data } = await axios.get(`${URL_SEARCH}name=${name.trim()}`);
+      dispatch({
+        type: ON_SEARCH_NAME,
+        payload: data,
+      });
+    } catch (error) {
+      alert(`Sorry but we don't have any matches`);
     }
-}
+  };
+};
 
-export const getDogName = (name) => {
-    return async (dispatch) => {
-        try {
-            const { data } = await axios.get(`${URL}/dog?name=${name.trim()}`)
-            return dispatch({
-                type: GET_NAME,
-                payload: data
-            })
-        } catch (error) {
-            alert('ningun perro con ese nombre')
-        }
+export const allTemperaments = () => {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.get(`${URL_TEMPERAMENTS}`);
+      dispatch({
+        type: ALL_TEMPERAMENTS,
+        payload: data,
+      });
+    } catch (error) {
+      alert(`${error.message}`);
     }
-}
-
-export const getDogId = (id) => {
-    return async (dispatch) => {
-        try {
-            const { data } = await axios.get(`${URL}/dogs/${id}`)
-            return dispatch({
-                type: GET_ID,
-                payload: data
-            })
-        } catch (error) {
-            alert(error.message)
-        }
-    }
-}
-
-export const getTemperaments = () => {
-    return async (dispatch) => {
-        try {
-            const { data } = await axios.get(`${URL_BASE}/temperaments`)
-            return dispatch({
-                type: GET_TEMPERAMENTS,
-                payload: data
-            })
-        } catch (error) {
-            alert(error.message)
-        }
-    }
-}
+  };
+};
 
 export const createDog = (dog) => {
-    return async (dispatch) => {
-        try {
-            const { data } = await axios.post();
-            return dispatch({
-                type: CREATE_DOG,
-                payload: data
-            })
-        } catch (error) {
-            alert(error.message)
-        }
+  return async function (dispatch) {
+    try {
+      const { data } = await axios.post(`${URL_CREATE}`, dog);
+      return dispatch({
+        type: CREATE_DOG,
+        payload: data,
+      });
+    } catch (error) {
+      alert(`Lo sentimos pero el perro, ya se encuentra en la base de datos`);
     }
+  };
+};
+
+export const filterTemperaments = (temperaments) => {
+  return {
+    type: FILTER_TEMPERAMENTS,
+    payload: temperaments,
+  };
+};
+
+export const filterOrigins = (AoD)=>{
+  return{
+    type : FILTER_ORIGINS,
+    payload : AoD,
+  }
 }
+
+export const filterAz = (aOz) => {
+  return {
+    type: FILTER_AOZ,
+    payload: aOz,
+  };
+};
+
+export const filterWeight = (hOg) => {
+  return {
+    type: FILTER_WEIGHT,
+    payload: hOg,
+  };
+};
+
+export const next = () => {
+  return {
+    type: NEXT,
+  };
+};
+
+export const prev = () => {
+  return {
+    type: PREV,
+  };
+};
+
+export const reset = () => {
+  return {
+    type: RESET,
+  };
+};

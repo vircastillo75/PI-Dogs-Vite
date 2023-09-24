@@ -1,65 +1,108 @@
-/* Estilo para el contenedor principal */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  /* Estilo para la imagen */
-  .image {
-    max-width: 100%;
-    border: 2px solid black;
-    border-radius: 5px;
-  }
-  
-  /* Estilo para el nombre */
-  .name {
-    font-size: 2em;
-    margin: 10px 0;
-  }
-  
-  /* Estilo para la vida útil */
-  .lifeSpan {
-    font-size: 1.5em;
-    margin: 5px 0;
-  }
-  
-  /* Estilo para el temperamento */
-  .temperament {
-    font-size: 1.5em;
-    margin: 5px 0;
-  }
-  
-  /* Estilo para la altura */
-  .height {
-    font-size: 1.5em;
-    margin: 5px 0;
-  }
-  
-  /* Estilo para el peso */
-  .weight {
-    font-size: 1.5em;
-    margin: 5px 0;
-  }
-  
-  /* Estilo para el botón */
-  .button {
-    background-color: #007BFF;
-    color: white;
-    font-size: 1.2em;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #0056b3;
-  }
-  
-
-
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../../images/backgroundDetail.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+.box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(41, 119, 152, 0.7);
+  margin: 3em 4em;
+  width: fit-content;
+  color: beige;
+  border: none;
+  box-shadow: 40px 40px 80px rgb(76, 79, 110);
+  border-radius: 4em;
+  font-family: 'Roboto', sans-serif;
+}
+.tittle{
+  font-size: 4em;
+  font-weight: bold;
+  margin:0;
+  padding: 0.4em 0;
+  width: 100%;
+  background-color: #545B77;
+  border-radius: 1em 1em 0 0;
+}
+.imageAndDataContainer{
+  display: flex;
+  flex-direction: row;
+}
+.img{
+  width: 35%;
+  border: 2px solid black;
+  border-radius: 0 0 0 4em;
+}
+.infoContainer{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 65%;
+}
+.information{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.dataContainer{
+  padding: 10px 20px;
+  background-color: #8294C4;
+  border:1px solid black;
+  border-radius: 1em;
+}
+.dataContainer:hover{
+  background-color: #19A7CE;
+}
+.subtitle{
+  margin: 0.2em 0;
+  font-size: 2.5em;
+}
+.dataMinMax{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.data{
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  margin: 0 1em;
+}
+.dataText{
+  margin: 0.3em 0;
+}
+.temperamentsContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.temperaments{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0 1em;
+  padding: 0;
+}
+.temperament{
+  text-align: center;
+  margin: 0.5em;
+  padding: 0.1em 0.3em;
+  font-size: 1.6em;
+  background-color: #8294C4;
+  border:1px solid black;
+  border-radius: 10px;
+}
+.temperament:hover{
+  background-color: #19A7CE;
+}

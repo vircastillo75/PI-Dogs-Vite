@@ -1,103 +1,41 @@
-// src/validation/validation.js
+const regexName = /^(?!.*\d)[A-Za-z]{3,24}$/;
+const regexImage = /^(?=.{1,}\.\w+$|.{1,}\:\/\/).+$/;
+const RegexNumber = /^[0-9]+$/;
+const regexLife = /^[0-9]+$/
 
-const validate = (breedData) => {
-    let errors = {};
-  
-    const regexName = /\d+/;
-  
-    // Errors name
-    if (breedData.name.length < 5) {
-      errors.name = "Tiene que ser de mínimo 5 caracteres";
-    }
-    if (breedData.name.length > 30) {
-      errors.name = "Tiene que ser de máximo 30 caracteres";
-    }
-    if (regexName.test(breedData.name)) {
-      errors.name = "No puede tener números";
-    }
-  
-    // Errors image
-    if (breedData.image.length === 0) {
-      errors.image = "El campo no puede estar vacío";
-    }
-  
-    // Errors minHeight
-    if (breedData.minHeight === 0) {
-      errors.minHeight = "No puede ser 0";
-    }
-    if (breedData.minHeight < 0) {
-      errors.minHeight = "No puede ser menor que 0";
-    }
-    if (breedData.minHeight > 110) {
-      errors.minHeight = "No puede ser mayor que 110 cm";
-    }
-    if (Number(breedData.minHeight) > Number(breedData.maxHeight)) {
-      errors.minHeight = "No puede ser mayor que maxHeight";
-    }
-  
-    // Errors maxHeight
-    if (breedData.maxHeight === 0) {
-      errors.maxHeight = "No puede ser 0";
-    }
-    if (breedData.maxHeight < 0) {
-      errors.maxHeight = "No puede ser menor que 0";
-    }
-    if (breedData.maxHeight > 110) {
-      errors.maxHeight = "No puede ser mayor que 110 cm";
-    }
-    if (Number(breedData.maxHeight) < Number(breedData.minHeight)) {
-      errors.maxHeight = "No puede ser menor que minHeight";
-    }
-  
-    // Errors minWeight
-    if (breedData.minWeight === 0) {
-      errors.minWeight = "No puede ser 0";
-    }
-    if (breedData.minWeight < 0) {
-      errors.minWeight = "No puede ser menor que 0";
-    }
-    if (breedData.minWeight > 120) {
-      errors.minWeight = "No puede ser mayor que 120 kg";
-    }
-    if (Number(breedData.minWeight) > Number(breedData.maxWeight)) {
-      errors.minWeight = "No puede ser mayor que maxWeight";
-    }
-  
-    // Errors maxWeight
-    if (breedData.maxWeight === 0) {
-      errors.maxWeight = "No puede ser 0";
-    }
-    if (breedData.maxWeight < 0) {
-      errors.maxWeight = "No puede ser menor que 0";
-    }
-    if (breedData.maxWeight > 120) {
-      errors.maxWeight = "No puede ser mayor que 120 kg";
-    }
-    if (Number(breedData.maxWeight) < Number(breedData.minWeight)) {
-      errors.maxWeight = "No puede ser menor que minWeight";
-    }
-  
-    // Errors life_span
-    if (breedData.life_span === 0) {
-      errors.life_span = "No puede ser 0";
-    }
-    if (breedData.life_span < 0) {
-      errors.life_span = "No puede ser menor que 0";
-    }
-    if (breedData.life_span > 35) {
-      errors.life_span = "No puede ser mayor que 35 años";
-    }
-  
-    // Errors temperaments
-    if (breedData.temperaments.length < 3) {
-      errors.temperaments = "Mínimo se requiere de 3 temperamentos";
-    }
-    if (breedData.temperaments.length > 10) {
-      errors.temperaments = "Máximo puede tener 10 temperamentos";
-    }
-  
-    return errors;
-  };
-  
-  export default validate;
-  
+const validation = (dogsData)=>{
+
+    const errors = {}
+
+
+    if(!regexName.test(dogsData.name)) errors.name = "Your name is invalid"
+
+    if(!regexImage.test(dogsData.image)) errors.image = "Should be a pictur"
+    
+    if (!RegexNumber.test(dogsData.height1) || !RegexNumber.test(dogsData.height2))
+    errors.height1 = "You can only put numbers";
+
+    else if (!dogsData.height1 || !dogsData.height2)
+    errors.height1 = "Debe llenar ambos campos";
+
+    else if (Number(dogsData.height2) <= Number(dogsData.height1))
+    errors.height1 = "The second value must be greater than the first";
+
+  if (!RegexNumber.test(dogsData.weight1) || !RegexNumber.test(dogsData.weight2))
+    errors.weight1 = "You can only put numbers";
+
+  else if (!dogsData.weight1 || !dogsData.weight2)
+    errors.weight1 = "You must fill in both fields";
+
+  else if (Number(dogsData.weight1) >= Number(dogsData.weight2))
+    errors.weight1 = "The second value must be greater than the first";
+
+    if(!regexLife.test(dogsData.life_span)) errors.life_span = "must be a number"
+
+
+    if(dogsData.temperament.length === 0) errors.temperament = "You must select at least 1 temperament"
+    
+    return errors
+}
+
+export default validation;

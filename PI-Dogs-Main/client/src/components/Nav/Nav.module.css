@@ -1,20 +1,145 @@
-.Nav {
-    background-color: #333;
-    color: white;
-    padding: 10px;
+/* Nav.module.css */
+
+.Custom_Container__Nav {
+  background-color: var(--Oscuro);
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  gap: 1.5rem;
+  border-bottom: 4px solid var(--Inter);
+}
+
+.Custom_Nav__Link {
+  text-decoration: none;
+  color: #Fff;
+}
+
+.Custom_Container__Navigate {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Custom_Container__Menu {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.Custom_Nav__Cont {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+}
+
+.Custom_Nav__Li {
+  list-style: none;
+}
+
+.Custom_Nav__Li--Logout {
+  display: none;
+}
+
+.Custom_Button__Hamburguer {
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  border: none;
+}
+
+.Custom_Button__Logout {
+  background-color: var(--Red);
+  padding: .4rem 1.5rem;
+  border: none;
+  border-radius: .5rem;
+  color: var(--white);
+  cursor: pointer;
+  margin-right: 4rem;
+}
+
+.Custom_Button__Logout:hover {
+  background-color: rgb(169, 5, 5);
+}
+
+.Custom_Logo__Logout {
+  fill: var(--white);
+  font-size: .9rem;
+}
+
+@media screen and (max-width: 600px) {
+  .Custom_Container__Nav {
+    flex-direction: column;
+    height: 4.5rem;
+    position: relative;
+    padding: 0;
+  }
+
+  .Custom_Button__Hamburguer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-  }
-  
-  .Nav h1 {
-    margin: 0;
-    font-size: 24px;
-  }
-  
-  .Nav a {
+    fill: var(--white);
     text-decoration: none;
-    color: white;
-    margin-right: 20px;
-    font-weight: bold;
+    background-color: transparent;
+    z-index: 1;
   }
+
+  .Custom_Container__Menu {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 0vh;
+    opacity: 0;
+    transition: all .5s ease;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .Custom_Container__Menu.Custom_isActive {
+    width: 100%;
+    height: 200vh;
+    opacity: 1;
+    background-color: var(--Oscuro);
+    z-index: 1;
+  }
+
+  .Custom_DivS {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .Custom_Container__Navigate {
+    width: 80%;
+    height: 20%;
+    gap: 3rem;
+    flex-direction: column;
+    padding-top: 2.5rem;
+  }
+
+  .Custom_Nav__Cont {
+    gap: 5rem;
+    padding-top: 35rem;
+    flex-direction: column;
+    font-size: 1.2rem;
+  }
+
+  .Custom_Nav__Li {
+    margin: .5rem 0;
+  }
+
+  .Custom_Nav__Li--Logout {
+    display: flex;
+  }
+
+  .Custom_Button__Logout {
+    display: none;
+  }
+}
