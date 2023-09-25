@@ -3,7 +3,7 @@
   height: 550px;
   display: flex;
   flex-direction: column;
-  background-color: whitesmoke;
+  background-color: #e39e1e;
   border-radius: 20px;
   padding: 5px;
   border: 4px solid transparent;
@@ -22,7 +22,7 @@
   width: 35px;
   height: 35px;
   border: none;
-  border-radius: 0px;
+  border-radius: 12px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -54,7 +54,7 @@
 /* hover effect on button width */
 .btnClose:hover {
   width: 125px;
-  border-radius: 0px;
+  border-radius: px;
   transition-duration: .3s;
 }
 .btnClose:hover .sign {
@@ -81,7 +81,7 @@
 .imageContainer{
   width: 100%;
   height: 250px;
-  background-color: gray;
+  background-color: #DB7C26;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,7 +135,7 @@
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
   background-color: #a6c2f0;
-  cursor: pointer;
+cursor: pointer;
 }
 
 .temperamentsContainer{
@@ -145,8 +145,8 @@
   justify-content:center;
 }
 .temperament{
-  background-color: #b2b2fd;
-  color: #1a41cd;
+  background-color: #FFE6A7;
+  color: #f17d09;
   padding: 1px 3px;
   margin: 0.3em;
   border-radius: 10px;
