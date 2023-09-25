@@ -22,6 +22,7 @@ const FormPage = () => {
 
   const [breedData, setBreedData] = useState(initialState);
   const [errors, setErrors] = useState(initialState);
+  const [checkboxes, setCheckboxes] = useState({});
 
   useEffect(() => {
     dispatch(getallTemperaments());
@@ -41,18 +42,20 @@ const FormPage = () => {
 
   const handleChangeTemperaments = (event) => {
     const { name, value, checked } = event.target;
-    let newTemperaments;
-    if (checked) {
-      newTemperaments = [...breedData.temperaments, value];
-    } else {
-      newTemperaments = breedData.temperaments.filter(
-        (temperament) => temperament !== value
-      );
-    }
+    const newTemperaments = checked
+      ? [...breedData.temperaments, value]
+      : breedData.temperaments.filter((temperament) => temperament !== value);
+
     setBreedData({
       ...breedData,
       [name]: newTemperaments,
     });
+
+    setCheckboxes({
+      ...checkboxes,
+      [value]: checked,
+    });
+
     setErrors({
       ...errors,
       [name]: validate({ ...breedData, [name]: newTemperaments })[name],
@@ -82,10 +85,7 @@ const FormPage = () => {
   const resetForm = () => {
     setBreedData(initialState);
     setErrors(initialState);
-    const checkBoxes = document.querySelectorAll('input[type="checkbox"]');
-    checkBoxes.forEach((checkbox) => {
-      checkbox.checked = false;
-    });
+    setCheckboxes({});
   };
 
   return (
@@ -93,7 +93,7 @@ const FormPage = () => {
       <div className={styles.container2}>
         <h1 className={styles.title}>Create Dog</h1>
         <form className={styles.formContainer} onSubmit={handleSubmit}>
-          <div className={styles.inputContainer}>
+        <div className={styles.inputContainer}>
             <label className={styles.labelTitle} htmlFor="name">
               NOMBRE
             </label>
@@ -252,4 +252,4 @@ const FormPage = () => {
 };
 
 export default FormPage;
-
+        

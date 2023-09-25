@@ -1,9 +1,7 @@
-
-
 /* Estilos para el body */
 body {
   background-image: url("https://tse2.mm.bing.net/th?id=OIP.kKBf8FoNYCG-9E7hco2DEAHaEo&pid=Api&P=0&h=180");
-   background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -13,7 +11,9 @@ body {
   justify-content: flex-start;
   align-items: center;
   height: 100vh;
+
 }
+
 
 /* Estilos para el contenedor principal */
 .LandingPage {
@@ -37,7 +37,6 @@ body {
   font-size: 500%;
   text-shadow: 0 0 10px #fcbf49;
 }
-
 
 /* Estilos para el botón */
 .container button {

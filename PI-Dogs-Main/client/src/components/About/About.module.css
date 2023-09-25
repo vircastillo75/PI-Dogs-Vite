@@ -3,7 +3,7 @@
 .box {
     /* Estilos para el contenedor principal */
     display: flex;
-    justify-content: flex-end; /* Alinea el contenido a la parte superior derecha */
+    justify-content: flex-start; /* Alinea el contenido a la parte superior derecha */
     align-items: flex-start; /* Alinea el contenido a la parte superior derecha */
     background-size: cover;
     min-height: 100vh;
@@ -32,6 +32,7 @@
         margin-bottom: 1em;
         text-align: center; 
         margin-left: 15px;
+        text-shadow: 0 3px #fcbf49
     }
 
 .subtittle {
