@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      {/*Renderizado Condicional de Nav*/}
+     
       {location.pathname!=="/" && 
       <Nav />}
     

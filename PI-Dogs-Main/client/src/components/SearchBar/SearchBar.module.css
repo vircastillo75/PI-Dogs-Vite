@@ -1,4 +1,4 @@
-.container{
+.container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -6,27 +6,33 @@
   padding: 0;
   gap: 0;
 }
-/*Input*/
-.input{
+
+/* Input */
+.input {
   width: 300px;
   height: 60px;
   margin-right: 5px;
   border-radius: 6px;
-  background-color: #2E2E2E;
+  background-color: #2e2e2e;
   color: white;
   border: 1px solid rgb(17, 16, 16);
   font-size: 20px;
 }
 
-/*Boton de búsqueda*/
-.buttonSearch{
+/* Boton de búsqueda */
+.buttonSearch {
   align-items: center;
-  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  background-image: linear-gradient(
+    144deg,
+    #af40ff,
+    #5b42f3 50%,
+    #00ddebf3
+  );
   border: 0;
   border-radius: 8px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   font-family: Phantomsans, sans-serif;
   font-size: 20px;
@@ -41,7 +47,7 @@
   touch-action: manipulation;
   white-space: nowrap;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .buttonSearch:active,

@@ -1,85 +1,83 @@
+/* Estilos para el contenedor principal */
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #b2f9ff;
-    background: -moz-linear-gradient(135deg, #b2f9ff 0%, #efebbe 100%);
-    background: -webkit-linear-gradient(135deg, #b2f9ff 0%, #efebbe 100%);
-    background: linear-gradient(135deg, #b2f9ff 0%, #efebbe 100%);
-  }
-  
-  .selectsContainer {
-    margin: 3vh 0;
-  }
-  
-  .select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    padding: 1vh 2vw 1vh 1vw;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: transparent;
-    background-image: linear-gradient(135deg, transparent 50%, #aaa 50%);
-    background-position: calc(100% - 2vw) calc(1vh + 2px);
-    background-size: 5px 5px, 2px 2.5vh;
-    background-repeat: no-repeat;
-    color: #333;
-    font-family: Arial, sans-serif;
-    font-size: 2vh;
-  }
-  
-  .select:focus {
-    outline: none;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-    border-color: #888;
-  }
-  
-  .option {
-    padding: 1vh;
-    background-color: whitesmoke;
-    color: #333;
-    font-family: Arial, sans-serif;
-    font-size: 1.4vh;
-  }
-  
-  .select:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-  
-  .btnAlldogs,
-  .btnAlldogs:focus {
-    font-size: 1.7vh;
-    padding: 1vh 2.5vw;
-    border-radius: 0.7rem;
-    background: #d8ff7e;
-    background: -moz-linear-gradient(
-      to right,
-      #d8ff7e 0%,
-      #97e7a2 100%
-    );
-    background: -webkit-linear-gradient(
-      to right,
-      #d8ff7e 0%,
-      #97e7a2 100%
-    );
-    background: linear-gradient(to right, #d8ff7e 0%, #97e7a2 100%);
-    border: 2px solid rgb(50, 50, 50);
-    border-bottom: 5px solid rgb(50, 50, 50);
-    box-shadow: 0.5vh 0.5vh 3vh 0px rgb(64, 154, 156);
-    transform: translate(0, -1vh);
-    transition: 0.2s;
-    transition-timing-function: linear;
-  }
-  
-  .btnAlldogs:active {
-    transform: translate(0, 0);
-    border-bottom: 0.4vh solid rgb(50, 50, 50);
-  }
-  
-  .paginado {
-    margin: auto;
-  }
-  
+  display: flex; /* Usar un diseño flexible para centrar contenido verticalmente */
+  flex-direction: column; /* Colocar elementos en una columna vertical */
+  justify-content:space-evenly; /* Centrar verticalmente el contenido */
+  align-items: center; /* Centrar horizontalmente el contenido */
+  background: #f0e08f; /* Fondo amarillo claro */
+  background: -moz-linear-gradient(135deg, #b2f9ff 0%, #efebbe 100%); /* Gradiente lineal */
+  background: -webkit-linear-gradient(135deg, #b2f9ff 0%, #efebbe 100%); /* Gradiente lineal para navegadores webkit */
+  background: linear-gradient(135deg, hsl(39, 64%, 54%) 0%, #efebbe 100%); /* Gradiente lineal */
+  height: 100vh; /* Altura del 100% de la ventana del navegador */
+  overflow-y: auto; /* Permitir el desplazamiento vertical cuando sea necesario */
+}
+
+/* Estilos para contenedor de selects */
+.selectsContainer {
+  margin: 10em 0; /* Márgenes superior e inferior de 3em (ajustable) */
+}
+
+/* Estilos para los selects personalizados */
+.select {
+  appearance: none; /* Ocultar la apariencia predeterminada del select */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 0.5em 2em 0.5em 0.5em; /* Espaciado interno del select */
+  border: 1px solid #ccc; /* Borde con color gris */
+  border-radius: 4px; /* Borde redondeado */
+  background-color: transparent; /* Fondo transparente */
+  background-image: linear-gradient(135deg, transparent 50%, #aaa 50%); /* Fondo degradado */
+  background-position: calc(100% - 20px) calc(1em + 2px); /* Posición del fondo degradado */
+  background-size: 5px 5px, 2px 2.5em; /* Tamaño del fondo degradado */
+  background-repeat: no-repeat; /* No repetir el fondo degradado */
+  color: #333; /* Color del texto */
+  font-family: Arial, sans-serif; /* Fuente del texto */
+  font-size: 16px; /* Tamaño de fuente */
+}
+
+.select:focus {
+  outline: none; /* Quitar el contorno cuando el select está enfocado */
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); /* Sombra cuando el select está enfocado */
+  border-color: #888; /* Color del borde cuando el select está enfocado */
+}
+
+.option {
+  padding: 0.5em; /* Espaciado interno de las opciones */
+  background-color: whitesmoke; /* Color de fondo de las opciones */
+  color: #333; /* Color del texto de las opciones */
+  font-family: Arial, sans-serif; /* Fuente del texto de las opciones */
+  font-size: 14px; /* Tamaño de fuente de las opciones */
+}
+
+.select:disabled {
+  opacity: 0.5; /* Opacidad reducida para selectores deshabilitados */
+  cursor: not-allowed; /* Cambio de cursor para indicar que está deshabilitado */
+}
+
+/* Estilos para el botón de "All Dogs" */
+.btnAlldogs,
+.btnAlldogs:focus {
+  font-size: 17px; /* Tamaño de fuente */
+  padding: 10px 25px; /* Espaciado interno del botón */
+  border-radius: 0.7rem; /* Borde redondeado */
+  background: #d8ff7e; /* Fondo con degradado */
+  background: -moz-linear-gradient(to right, #d8ff7e 0%, #97e7a2 100%);
+  background: -webkit-linear-gradient(to right, #d8ff7e 0%, #97e7a2 100%);
+  background: linear-gradient(to right, #d8ff7e 0%, #97e7a2 100%);
+  border: 2px solid rgb(50, 50, 50); /* Borde con color gris oscuro */
+  border-bottom: 5px solid rgb(50, 50, 50); /* Borde inferior más grande */
+  box-shadow: 0px 1px 6px 0px rgb(64, 154, 156); /* Sombra del botón */
+  transform: translate(0, -3px); /* Desplazamiento hacia arriba al hacer clic */
+  transition: 0.2s; /* Transición suave */
+  transition-timing-function: linear;
+}
+
+.btnAlldogs:active {
+  transform: translate(0, 0); /* Restablecer el desplazamiento al hacer clic */
+  border-bottom: 2px solid rgb(50, 50, 50); /* Borde inferior más pequeño al hacer clic */
+}
+
+/* Estilos para el paginado */
+.paginado {
+  margin: auto; /* Centrar horizontalmente el paginado */
+}

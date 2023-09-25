@@ -1,42 +1,45 @@
-/*Contenedor de toda la NavBar*/
-.container{
-	background-color: #332b3b;
+/* Contenedor de toda la NavBar */
+.nav-container {
+	background-color: #ded4e7;
 	display: flex;
 	flex-direction: column;
-}
-
-.title{
+  }
+  
+  /* Estilos para el título */
+  .nav-title {
 	text-align: center;
 	font-family: 'Roboto', sans-serif;
 	font-size: 60px;
 	margin: 0;
 	color: beige;
-}
-/*Contiene a todo menos el titulo*/
-.body{
+  }
+  
+  /* Contenedor para todo excepto el título */
+  .nav-body {
 	display: flex;
 	flex-direction: row-reverse;
 	justify-content: space-between;
 	padding-bottom: 5px;
-	padding-left:  3em;
+	padding-left: 3em;
 	padding-right: 3em;
-}
-
-/*Contenedor de los botones Home, New Dog */
-.buttons{
+  }
+  
+  /* Contenedor de los botones Home y New Dog */
+  .nav-buttons {
 	display: flex;
 	justify-content: center;
-	align-items: end;
+	align-items: flex-end;
 	margin-bottom: 1em;
-}
-
-.btn{
+  }
+  
+  /* Estilos para los botones */
+  .nav-btn {
 	display: flex;
 	flex-wrap: nowrap;
 	height: fit-content;
 	font-weight: bold;
 	font-size: 1.8em;
-	background-color: #52455f;/*2C3333*/
+	background-color: #52455f;
 	padding: 0.3em;
 	margin: 0 2.5em;
 	border: none;
@@ -45,12 +48,15 @@
 	text-align: center;
 	cursor: pointer;
 	color: beige;
-}
-
-.btn:hover{
-	background-color: rgb(91, 62, 119);/*393053*/
-}
-
-.btn:active{
+  }
+  
+  /* Estilos para el botón al pasar el mouse sobre él */
+  .nav-btn:hover {
+	background-color: rgb(91, 62, 119);
+  }
+  
+  /* Estilos para el botón cuando está activo */
+  .nav-btn:active {
 	transform: scale(0.9);
-}
+  }
+  

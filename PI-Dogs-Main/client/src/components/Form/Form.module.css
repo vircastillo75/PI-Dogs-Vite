@@ -1,47 +1,56 @@
-.container{
+.container {
     background: url("https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTN8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60") no-repeat center center fixed;
     background-size: cover;
     height: 100%;
     width: 100%;
 }
-.container2{
+
+.container2 {
     background-color: rgba(62, 58, 58, 0.415);
     flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.title{
+
+.title {
     font-size: 4em;
 }
-.formContainer{
+
+.formContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.inputContainer{
+
+.inputContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 1em 0;
 }
-.labelTitle{
+
+.labelTitle {
     font-size: 1.9em;
     font-weight: bold;
 }
-.containerMinMax{
+
+.containerMinMax {
     display: flex;
     flex-direction: row;
 }
-.inputData{
+
+.inputData {
     display: flex;
     flex-direction: column;
 }
-.labelText{
+
+.labelText {
     font-size: 1.5em;
 }
-.inputText{
+
+.inputText {
     font-size: 17px;
     width: 400px;
     border-radius: 0.375rem;
@@ -51,10 +60,12 @@
     padding: 0.75rem 1rem;
     color: rgba(243, 244, 246, 1);
 }
-.inputText:focus{
+
+.inputText:focus {
     border-color: rgb(86, 172, 203);
 }
-.inputNumber{
+
+.inputNumber {
     font-size: 17px;
     width: 200px;
     border-radius: 0.375rem;
@@ -64,17 +75,20 @@
     padding: 0.75rem 1rem;
     color: rgba(243, 244, 246, 1);
 }
-.inputNumber:focus{
+
+.inputNumber:focus {
     border-color: rgb(86, 172, 203);
 }
 
-.error{
+.error {
     font-size: 1.2em;
     color: rgb(235, 13, 13);
     margin: 0.3em 0;
 }
-/*Temperaments*/
-.temperamentsContainer{
+
+/* Temperaments */
+
+.temperamentsContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -86,13 +100,16 @@
     border: 1px solid rgba(55, 65, 81, 1);
     border-radius: 0.375rem;
 }
-.temperament{
+
+.temperament {
     display: flex;
     flex-direction: row;
     width: fit-content;
     margin: 0.5em;
 }
-/*Checkbox*/
+
+/* Checkbox */
+
 .containerCheckBox {
     display: flex;
     align-items: center;
@@ -100,12 +117,14 @@
     color: #777777;
     cursor: pointer;
 }
+
 .checkBox {
     position: absolute;
     opacity: 0;
     width: 0;
     height: 0;
 }
+
 .checkmark {
     position: relative;
     display: inline-block;
@@ -116,10 +135,12 @@
     border-radius: 4px;
     transition: all 0.3s;
 }
+
 .checkBox:checked ~ .checkmark {
     background-color: #2F3300;
     border-color: #454B00;
 }
+
 .checkBox:checked ~ .checkmark:after {
     content: "";
     position: absolute;
@@ -131,23 +152,30 @@
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
 }
+
 .checkBox:focus ~ .checkmark {
     box-shadow: 0 0 0 2px #dfec5065;
 }
+
 .containerCheckBox:hover .checkBox ~ .checkmark {
     border-color: #C3CF34;
 }
+
 .checkBox:disabled ~ .checkmark {
     opacity: 0.5;
     cursor: not-allowed;
 }
+
 .checkBox:disabled ~ .checkmark:hover {
     border-color: #4d4d4d;
 }
-/*Boton de submit*/
-.btnContainer{
+
+/* Boton de submit */
+
+.btnContainer {
     margin-bottom: 1em;
 }
+
 .btnSubmit {
     --green: #1BFD9C;
     font-size: 15px;
@@ -160,7 +188,7 @@
     transition: all 0.3s;
     line-height: 1.4em;
     border: 2px solid var(--green);
-    background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%);
+    background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%, transparent 60%, rgba(27, 253, 156, 0.1) 100%);
     color: var(--green);
     box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
 }
@@ -179,7 +207,7 @@
     height: 100%;
     top: 0;
     transition: transform .4s ease-in-out;
-    background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%,rgba(27, 253, 156, 0.1) 60% , transparent 100%);
+    background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%, rgba(27, 253, 156, 0.1) 60%, transparent 100%);
 }
 
 .btnSubmit:hover:before {

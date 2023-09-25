@@ -8,22 +8,23 @@
 }
 
 .paginationBtn {
-border: none;
-background-color: #6ec271;
-color: white;
-padding: 8px 16px;
-margin: 4px;
-font-size: 16px;
-cursor: pointer;
-transition: background-color 0.3s ease;
-border-radius: 4px;
+  border: none;
+  background-color: #6ec271;
+  color: white;
+  padding: 8px 16px;
+  margin: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
 }
 
 .paginationBtn:hover {
-background-color: #45a049;
+  background-color: #c98909;
 }
 
 .paginationBtn:disabled {
-background-color: #ccc;
-cursor: not-allowed;
+  background-color: #ccc;
+  cursor: not-allowed;
 }
+

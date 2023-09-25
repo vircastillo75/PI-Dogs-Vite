@@ -1,4 +1,3 @@
-// DetailPage.jsx
 import React, { useEffect, useState } from 'react';
 import styles from './Detail.module.css';
 import axios from 'axios';

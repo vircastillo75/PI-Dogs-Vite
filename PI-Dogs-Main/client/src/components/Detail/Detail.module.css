@@ -1,4 +1,5 @@
-.container{
+
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,7 +7,8 @@
   background-size: cover;
   height: 100vh;
 }
-.box{
+
+.box {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,25 +22,29 @@
   border-radius: 4em;
   font-family: 'Roboto', sans-serif;
 }
-.tittle{
+
+.title {
   font-size: 4em;
   font-weight: bold;
-  margin:0;
+  margin: 0;
   padding: 0.4em 0;
   width: 100%;
   background-color: #545B77;
   border-radius: 1em 1em 0 0;
 }
-.imageAndDataContainer{
+
+.imageAndDataContainer {
   display: flex;
   flex-direction: row;
 }
-.img{
+
+.img {
   width: 35%;
   border: 2px solid black;
   border-radius: 0 0 0 4em;
 }
-.infoContainer{
+
+.infoContainer {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -46,46 +52,55 @@
   align-items: center;
   width: 65%;
 }
-.information{
+
+.information {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
-.dataContainer{
+
+.dataContainer {
   padding: 10px 20px;
   background-color: #8294C4;
-  border:1px solid black;
+  border: 1px solid black;
   border-radius: 1em;
 }
-.dataContainer:hover{
+
+.dataContainer:hover {
   background-color: #19A7CE;
 }
-.subtitle{
+
+.subtitle {
   margin: 0.2em 0;
   font-size: 2.5em;
 }
-.dataMinMax{
+
+.dataMinMax {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-.data{
+
+.data {
   display: flex;
   flex-direction: column;
   font-size: 1.5em;
   margin: 0 1em;
 }
-.dataText{
+
+.dataText {
   margin: 0.3em 0;
 }
-.temperamentsContainer{
+
+.temperamentsContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.temperaments{
+
+.temperaments {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -94,15 +109,17 @@
   margin: 0 1em;
   padding: 0;
 }
-.temperament{
+
+.temperament {
   text-align: center;
   margin: 0.5em;
   padding: 0.1em 0.3em;
   font-size: 1.6em;
   background-color: #8294C4;
-  border:1px solid black;
+  border: 1px solid black;
   border-radius: 10px;
 }
-.temperament:hover{
+
+.temperament:hover {
   background-color: #19A7CE;
 }
