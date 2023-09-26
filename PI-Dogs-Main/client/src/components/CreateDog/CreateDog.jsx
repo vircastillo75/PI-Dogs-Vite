@@ -5,7 +5,7 @@ import { getallTemperaments } from "../../redux/actions";
 import validate from "../../utils/validations";
 import axios from "axios";
 
-const FormPage = () => {
+const CreateDog = () => {
   const dispatch = useDispatch();
   const { temperaments } = useSelector((state) => state);
 
