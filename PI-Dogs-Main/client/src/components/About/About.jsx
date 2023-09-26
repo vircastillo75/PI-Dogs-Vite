@@ -12,7 +12,7 @@ function About() {
           <div className={styles.containerText}>
             <h2 className={styles.subtittle}>My name is Maria Virginia Castillo</h2>
             <p className={styles.description}>
-              I have a degree in International Relations and I am a lawyer. I am finishing the Full Stack Developer course at Soy Henry; This is my first personal project.
+              I have a degree in International Relations and I am a lawyer. I am finishing the Full Stack Developer course at SoyHenry; This is my first personal project.
             </p>
           </div>
         </div>

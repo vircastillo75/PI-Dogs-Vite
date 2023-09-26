@@ -1,4 +1,4 @@
-import styles from "./Form.module.css";
+import styles from "./CreateDog.module.css";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getallTemperaments } from "../../redux/actions";
@@ -251,4 +251,4 @@ const FormPage = () => {
   );
 };
 
-export default FormPage;
+export default CreateDog;

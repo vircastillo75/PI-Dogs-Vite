@@ -8,9 +8,9 @@ import Paginado from "../Paginado/Paginado";
 const HomePage = () => {
 
     const dispatch = useDispatch();
-    //obtengo las razas del estado global
+
     const {breeds, temperaments} = useSelector(state => state);
-    //variables para el paginado
+ 
     const [ currentPage, setCurrentPage ] = useState(1);
     const [ breedsPerPage, setBreedsPerPage ] = useState(8);
     const indexLastBreed = currentPage * breedsPerPage;
@@ -21,7 +21,7 @@ const HomePage = () => {
         setCurrentPage(pageNumber)
     }
 
-    //Al renderizarse este componente me guarda todos los temperamentos y razas en el estado global
+  
     useEffect(()=>{
         dispatch(getallBreeds());
         dispatch(getallTemperaments());

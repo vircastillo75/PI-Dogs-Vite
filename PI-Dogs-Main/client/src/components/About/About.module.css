@@ -20,7 +20,7 @@
     border:color(from color srgb r g b);
     border-radius: 3em;
     box-shadow: 20px 20px 30px rgb(243, 138, 89);
-    margin: 10em; /* Reduzco el margen */
+    margin: 8em; /* Reduzco el margen */
 }
 
 
