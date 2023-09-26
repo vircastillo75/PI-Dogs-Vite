@@ -5,11 +5,6 @@ import { NavLink, useLocation } from "react-router-dom";
 
 const Nav = () => {
   const location = useLocation();
-  const [showSearchBar, setShowSearchBar] = useState(false);
-
-  const toggleSearchBar = () => {
-    setShowSearchBar(!showSearchBar);
-  };
 
   return (
     <div className={styles.container}>
@@ -22,8 +17,8 @@ const Nav = () => {
                   <button className={styles.btn}>Home</button>
                 </NavLink>
               )}
-              {location.pathname !== "/form" && (
-                <NavLink to="/form" style={{ color: "beige", textDecoration: "none" }}>
+              {location.pathname !== "/create-dog" && (
+                <NavLink to="/create-dog" style={{ color: "beige", textDecoration: "none" }}>
                   <button className={styles.btn}>Create Dog</button>
                 </NavLink>
               )}
@@ -32,11 +27,10 @@ const Nav = () => {
                   <button className={styles.btn}>About me</button>
                 </NavLink>
               )}
-              <button className={styles.btn} onClick={toggleSearchBar}>Search</button>
             </div>
           </div>
         </div>
-        {showSearchBar && (
+        {location.pathname === "/home" && (
           <div className={styles.searchBar}>
             <SearchBar />
           </div>
