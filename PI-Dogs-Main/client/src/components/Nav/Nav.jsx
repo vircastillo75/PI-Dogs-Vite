@@ -18,7 +18,7 @@ const Nav = () => {
 						<button className={styles.btn}>Home</button>
 					</NavLink>}
                     {location.pathname !=="/form" && <NavLink to="/form" style={{color:"beige", textDecoration:"none"}}>
-						<button className={styles.btn}>New Dog</button>
+						<button className={styles.btn}>Create Dog</button>
 					</NavLink>}
                     {location.pathname !=="/about" && <NavLink to="/about" style={{color:"beige", textDecoration:"none"}}>
 						<button className={styles.btn}>About me</button>

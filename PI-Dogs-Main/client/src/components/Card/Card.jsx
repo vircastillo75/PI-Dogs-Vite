@@ -15,7 +15,7 @@ const Card = ({ id, image, name, minWeight, maxWeight, temperaments }) => {
         </button>
       </div>
       <h2 className={styles.nameTitle}>{name}</h2>
-      <div className={styles.imageContainer}>
+       <div className={styles.imageContainer}>
         <img className={styles.image} src={image} alt={name} />
       </div>
       <div className={styles.ContainerWeightAndBtnDetail}>
@@ -26,29 +26,7 @@ const Card = ({ id, image, name, minWeight, maxWeight, temperaments }) => {
             <p className={styles.data}>Max: {maxWeight}</p>
           </div>
         </div>
-        <div className={styles.containerBtnDetail}>
-          <NavLink to={`/detail/${id}`}>
-            <button className={styles.btnDetail}>
-              <svg
-                style={{ color: "black" }}
-                xmlns="http://www.w3.org/2000/svg"
-                width="2em"
-                height="2em"
-                color="black"
-                strokeLinejoin="round"
-                strokeLinecap="round"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                fill="none"
-                stroke="currentColor"
-              >
-                <line y2="12" x2="19" y1="12" x1="5"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </button>
-          </NavLink>
         </div>
-      </div>
 
       <div className={styles.temperamentsContainer}>
         {temperaments.map((temperament, index) => {

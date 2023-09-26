@@ -13,7 +13,7 @@
 .btnContainer{
   display: flex;
   justify-content: end;
-  margin: 0.5em 0;
+  margin: 1em 0;
 }
 .btnClose {
   display: flex;
@@ -89,7 +89,7 @@
 .image{
   width: 250px;
   height: 250px;
-  border-radius: 50%;
+  border-radius: 10%;
 }
 .ContainerWeightAndBtnDetail{
   display: flex;

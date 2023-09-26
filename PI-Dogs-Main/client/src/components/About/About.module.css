@@ -6,7 +6,7 @@
     justify-content: flex-start; /* Alinea el contenido a la parte superior derecha */
     align-items: flex-start; /* Alinea el contenido a la parte superior derecha */
     background-size: cover;
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
 .container {
@@ -15,29 +15,29 @@
     flex-direction: column;
     justify-content: flex-start; /* Alinea el contenido en la parte superior */
     align-items: flex-start; /* Alinea el contenido a la parte superior derecha */
-    width: 600px; /* Reduzco el ancho del contenedor */
+    width: 800px; /* Reduzco el ancho del contenedor */
     background-color: transparent;
     border:color(from color srgb r g b);
     border-radius: 3em;
     box-shadow: 20px 20px 30px rgb(243, 138, 89);
-    margin: 2em; /* Reduzco el margen */
+    margin: 10em; /* Reduzco el margen */
 }
 
 
-    .tittle {
-        /* Estilos para el título */
-        color: #dda15e;
-        font-size: 2.5em;
-        font-weight: bold;
-        margin-bottom: 1em;
-        text-align: center; 
-        margin-left: 15px;
-        text-shadow: 0 3px #fcbf49
-    }
+.tittle {
+    /* Estilos para el título */
+    color: #dda15e;
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 0.5em; /* Reduzco el margen inferior del título */
+    text-align: center;
+    margin-left: 25px;
+    text-shadow: 0 3px #fcbf49;
+}
 
 .subtittle {
     /* Estilos para el subtítulo */
-    font-size: 1.8em; /* Reduzco el tamaño de fuente para h2 */
+    font-size: 2.5em;
     text-align: center;
     color: black;
     text-shadow: 0 0 20px #fcbf49;
@@ -45,10 +45,10 @@
 
 .description {
     /* Estilos para la descripción */
-    font-size: 1em;
-    text-align: center; 
+    font-size: 1.5em;
+    text-align: center;
     color: #f48c06;
+    margin-bottom: 1em;
+    margin-left: 2em; /* Agrego margen izquierdo */
+    margin-right: 2em; ; /* Agrego un margen inferior a la descripción */
 }
-
- 
-  

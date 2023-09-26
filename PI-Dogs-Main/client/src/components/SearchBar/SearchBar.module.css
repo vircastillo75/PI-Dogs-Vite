@@ -2,21 +2,25 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 0;
+  margin: 50px;
   padding: 0;
   gap: 0;
 }
 
 /* Input */
 .input {
-  width: 300px;
-  height: 60px;
+  width: 600px;
+  height: 80px;
   margin-right: 5px;
   border-radius: 6px;
-  background-color: #2e2e2e;
-  color: white;
-  border: 1px solid rgb(17, 16, 16);
-  font-size: 20px;
+  background-color:#ffe6a7;
+  color: black;
+  text-shadow: 0 5px #fcbf49;
+  border: 1.5px solid rgb(200, 33, 33);
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 100px;
+  text-align: center;
 }
 
 /* Boton de búsqueda */
@@ -24,15 +28,13 @@
   align-items: center;
   background-image: linear-gradient(
     144deg,
-    #af40ff,
-    #5b42f3 50%,
-    #00ddebf3
-  );
+    #6f1d1b,
+    #bb9457 60%,
+    #ffe6a7
+    );
   border: 0;
   border-radius: 8px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
   box-sizing: border-box;
-  color: #ffffff;
   display: flex;
   font-family: Phantomsans, sans-serif;
   font-size: 20px;
@@ -48,6 +50,8 @@
   white-space: nowrap;
   cursor: pointer;
   transition: all 0.3s;
+  width: 200px;
+  height: 80px;
 }
 
 .buttonSearch:active,
@@ -56,7 +60,7 @@
 }
 
 .buttonSearch .texto {
-  background-color: rgb(5, 6, 45);
+  background-color: #edcf9f;
   padding: 3px 24px;
   border-radius: 6px;
   width: 100%;
